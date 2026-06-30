@@ -13,13 +13,13 @@ class Zone:
 
     # Perform all necessary updates
     def update(self):
-        self.control.update()
         self.log(f'Beginning update cycle', logging.DEBUG)
+        self.control.update()
     
     # Attach a device
     def attach_interfaceable(self, out: Interfaceable, pin: int):
         self.io.attach_interfaceable(out, pin)
-        self.log(f'Attached device {out} on pin {pin}', logging.DEBUG)
+        self.log(f'Attached device {out} on pin {pin}', logging.INFO)
 
     # Log
     def log(self, msg: str, lvl=logging.DEBUG):

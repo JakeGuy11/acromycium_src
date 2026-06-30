@@ -21,7 +21,7 @@ class IO:
     # Attach device to pin. placeholder for now
     def attach_pin(self, out: UI_Pins, pin: int):
         self.pins[out] = pin
-        self.log(f'Attached device {out} on pin {pin}', logging.INFO)
+        self.log(f'Attached device {out} on pin {pin}', logging.DEBUG)
     
     # Log
     def log(self, msg: str, lvl=logging.DEBUG):

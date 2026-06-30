@@ -31,7 +31,7 @@ class IO:
     # Attach a device
     def attach_interfaceable(self, out: Interfaceable, pin: int):
         self.pins[out] = pin
-        self.log(f'Attached device {out} on pin {pin}', logging.INFO)
+        self.log(f'Attached device {out} on pin {pin}', logging.DEBUG)
     
     # Log
     def log(self, msg: str, lvl=logging.DEBUG):

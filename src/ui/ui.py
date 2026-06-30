@@ -19,7 +19,7 @@ class UI:
     # Get the UI to attach pins
     def attach_pin(self, out: UI_Pins, pin: int):
         self.io.attach_pin(out, pin)
-        self.log(f'Attached device {out} on pin {pin}', logging.DEBUG)
+        self.log(f'Attached device {out} on pin {pin}', logging.INFO)
 
     # Log
     def log(self, msg: str, lvl=logging.DEBUG):

@@ -1,9 +1,11 @@
 from enum import Enum
-import time, datetime, logging
+import time, logging
 
 # Define pins for each interfaceable element on the UI
 class UI_Pins(Enum):
     E_STOP = 0
+    LIGHT_PWR = 1
+
 
 # Class to interface with hardware for a zone
 class IO:
@@ -14,10 +16,13 @@ class IO:
             output: None
             for output in UI_Pins
         }
-        self.log(f'System UI[IO Interface] initialized with id {self.id}', logging.INFO)
+        self.log(f'Initialized with id {self.id}', logging.INFO)
 
+    # Attach device to pin. placeholder for now
     def attach_pin(self, out: UI_Pins, pin: int):
         self.pins[out] = pin
+        self.log(f'Attached device {out} on pin {pin}', logging.INFO)
     
+    # Log
     def log(self, msg: str, lvl=logging.DEBUG):
-        self.logger.log(level=lvl, msg=f'{self.id}: {msg}')
+        self.logger.log(level=lvl, msg=f'{self.id}: [UI IO] {msg}')

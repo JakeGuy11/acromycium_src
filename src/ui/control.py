@@ -5,11 +5,12 @@ class Control:
         self.id = round(time.time()*1000)
         self.logger = logger
         self.io = io
-        self.log(f'System UI[Control] initialized with id {self.id}', logging.INFO)
+        self.log(f'Initialized with id {self.id}', logging.INFO)
 
+    # Perform update
     def update(self):
-        self.log('[UI Control] Beginning update cycle', logging.DEBUG)
-        pass
+        self.log('Beginning update cycle', logging.DEBUG)
 
+    # Log
     def log(self, msg: str, lvl=logging.DEBUG):
-        self.logger.log(level=lvl, msg=f'{self.id}: {msg}')
+        self.logger.log(level=lvl, msg=f'{self.id}: [UI Control] {msg}')

@@ -13,10 +13,14 @@ class UI:
 
     # Perform all necessary updates
     def update(self):
+        self.log(f'Beginning update cycle', logging.DEBUG)
         self.control.update()
     
+    # Get the UI to attach pins
     def attach_pin(self, out: UI_Pins, pin: int):
         self.io.attach_pin(out, pin)
+        self.log(f'Attached device {out} on pin {pin}', logging.DEBUG)
 
+    # Log
     def log(self, msg: str, lvl=logging.DEBUG):
-        self.logger.log(level=lvl, msg=f'{self.id}: {msg}')
+        self.logger.log(level=lvl, msg=f'{self.id}: [UI Master] {msg}')

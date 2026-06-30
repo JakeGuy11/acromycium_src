@@ -8,12 +8,11 @@ logging.basicConfig(format='[%(asctime)s  %(levelname)s] %(message)s', datefmt='
 if __name__ == '__main__':
     current_ui = UI(logger)
     current_ui.attach_pin(UI_Pins.E_STOP, 4)
+    current_ui.update()
     print("UI initialized successfully")
 
     zone_1 = Zone(logger)
     zone_1.attach_interfaceable(Interfaceable.THERMOCOUPLE, 0)
-    print("Zones initialized successfully")
-
     zone_1.update()
-    print(zone_1.get_temp())
-    print("Zone updated successfully")
+    print("Zones initialized successfully")
+    
